@@ -1,4 +1,4 @@
-var sec = 0
+    var sec = 0
 var min = 0
 var msec = 0
 
@@ -44,20 +44,22 @@ function reset() {
     visible.style.visibility = "visible"
 }
 
-
+var list = document.getElementById("list")
 var records = []
 
 function record() {
     var a = min.toString() + ":" + sec.toString() + ":" + msec.toString()
     records.push(a)
     console.log(records)
-    let arr = []
+
     var abc = document.getElementById("abc")
     for (i = 0; i < records.length; i++) {
         records[i]
-        arr.push(`<li>${records[i]}</li>`)
+        var li = document.createElement("li")
+        var liText = document.createTextNode(records[i])
+        li.appendChild(liText)
     }
-    abc.innerHTML = arr
+    list.appendChild(li)
 }
 
 
